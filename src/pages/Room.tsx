@@ -7,6 +7,7 @@ import logoImg from '../assets/images/logo.svg';
 
 import { Button } from '../components/Button';
 import { RoomCode } from '../components/RoomCode';
+import { Question } from '../components/Question';
 
 import '../styles/room.scss';
 
@@ -51,7 +52,7 @@ export function Room() {
     useEffect(() => {
         const roomRef = database.ref(`rooms/${roomId}`)
 
-        roomRef.once('value', room => {
+        roomRef.on('value', room => {
             const databaseRoom = room.val()
             const firebaseQuestions: FirebaseQuestions = databaseRoom.questions ?? {}
 
@@ -130,6 +131,19 @@ export function Room() {
                         <Button type="submit" disabled={!user}>Enviar pergunta</Button>
                     </div>
                 </form>
+
+                <div className="question-list">
+                    {questions.map(question => {
+                        return (
+                            <Question
+                                key = {question.id}
+                                content = {question.content}
+                                author = {question.author}
+                            />
+                        )
+                    })}
+                </div>
+
             </main>
         </div>
     )
