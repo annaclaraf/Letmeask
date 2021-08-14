@@ -110,4 +110,12 @@
             margin-top: 32px;
         }
     }
+    
+    @media (max-width: 800px) {
+        main{
+            max-width: 90%;
+            margin: 0 auto;
+            margin-bottom: 2rem;
+        }
+    }
 }

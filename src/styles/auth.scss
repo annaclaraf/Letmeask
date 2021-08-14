@@ -141,4 +141,12 @@
             margin-left: 16px;
         }
     }
+
+    @media (max-width: 750px) {
+        flex-direction: column;
+
+        .main-content {
+            margin: 5rem 0;
+        }
+    }
 }

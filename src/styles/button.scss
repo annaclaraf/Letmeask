@@ -34,4 +34,12 @@
         cursor: not-allowed;
     }
 
+    @media(max-width: 750px) {
+         &.outlined {
+            padding: 5px;
+            content: url('../assets/images/close.svg');
+            width: 46px;
+        }
+    }
+
 }
